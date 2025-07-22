@@ -14,5 +14,12 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return response()->json([
+        'status' => 'success',
+        'message' => 'Service Mahasiswa',
+        'data' => [
+            'app_version' => '1.0',
+            'tec_info' => $router->app->version()
+        ]
+    ], 200);
 });
